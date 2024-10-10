@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#another rectangle
 """Defines a Rectangle class."""
 
 
@@ -65,9 +64,9 @@ class Rectangle:
             return ("")
 
         rect = []
-        for s in range(self.__height):
-            [rect.append('#') for r in range(self.__width)]
-            if s != self.__height - 1:
+        for i in range(self.__height):
+            [rect.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
 
