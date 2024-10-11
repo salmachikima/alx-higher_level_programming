@@ -3,12 +3,11 @@
 
 
 def matrix_divided(matrix, div):
-
     """Divides all elements of a matrix.
 
     Args:
-        matrix: matrix whoses elements are to be divided by div
-        div: dividing num
+        matrix: The matrix whoses elements are to be divided by div.
+        div: The dividing number.
 
     Raises:
         TypeError: if matrix is not a list of lists of int or float.
@@ -17,7 +16,7 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: if div is zero
 
     Returns:
-        a new matrix with elements rounded to 2 decimal places
+        a new matrix with elements rounded to 2 decimal places.
     """
 
     if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
