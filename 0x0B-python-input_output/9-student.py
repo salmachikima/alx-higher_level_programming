@@ -3,7 +3,7 @@
 
 
 class Student:
-    """Represent a student"""
+    """Represent a Student"""
 
     def __init__(self, first_name, last_name, age):
         """Initialize new Student
@@ -18,5 +18,5 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """Get a dictionary representation of the student"""
+        """Get a dictionary representation of the Student"""
         return self.__dict__
