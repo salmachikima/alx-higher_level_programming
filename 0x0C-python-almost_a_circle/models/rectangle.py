@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle that inherits from Base"""
+"""define a class rectangle"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class that defines properties of Rectangle.
+    """Class defines properties of Rectangle
 
      Attributes:
-        width (int): width of rectangle.
-        height (int): height of rectangle.
-        x (int): x.
-        y (int): y.
+        width (int): rectangle width
+        height (int): rectangle height
+        y (int): y
+        x (int): x
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Creates new instances of rectangle.
+        """Creates instance of rectangle
 
         Args:
-            width (int): width of rectangle.
-            height (int): height of rectangle.
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (int, optional): Identity number of rectangle. Defaults to None.
+            height (int): height of rectangle
+            width (int): width of rectangle
+            y (int, optional): y. Default to 0
+            x (int, optional): x. Defaults to 0
+            id (int, optional): Identity number. Default to nothing
         """
         self.width = width
         self.height = height
@@ -32,30 +32,30 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        """Prints rectangle"""
+        """Prints a rectangle"""
         return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
                 format(self.id, self.__x, self.__y, self.__width,
                        self.__height))
 
     @property
     def width(self):
-        """Width retriever.
+        """retriever of width
 
         Returns:
-            int: width of rectangle.
+            int: rectangle's width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Property setter for width of rectangle.
+        """Setter's property for width of the rectangle.
 
         Args:
-            value (int): width of rectangle.
+            value (int): rectangle width
 
         Raises:
-            TypeError: if width is not an integer.
-            ValueError: if width is less than or equal to zero.
+            TypeError: if width is not int
+            ValueError: if width less than 0 or equal to it
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
