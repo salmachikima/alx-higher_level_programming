@@ -1,4 +1,3 @@
 #!/bin/bash
-# Bash script that takes in a URL and 
-# displays all HTTP methods the server will accept
+# takes an URL,displays all HTTP methods accepted by the server
 curl -sI "$1" | grep "Allow:" | sed -ne 's/^Allow: //p'
