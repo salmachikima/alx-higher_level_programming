@@ -8,23 +8,29 @@ const fullUrl = baseUrl.concat(movieId);
 request(fullUrl, (error, response, body) => {
   if (!error) {
     const characters = JSON.parse(body).characters;
-	  let charactersProcessed = 0;
-	  const characterNames = [];
-	  characters.forEach((characterUrl) => {
-		  request(characterUrl, (error, response, body) => {
-			  if (!error) {
-				  const charName = JSON.parse(body).name;
-				  characterNames.push(charName);
-			  }
-			  charactersProcessed++;
-			  if (charactersProcessed === characters.length) {
-				  characterNames.forEach((actor) => {
-					  console.log(actor);
-				  });
-			  }
-		  });
-	  });
+    // variable where to store the num of chars processed
+    let charactersProcessed = 0;
+    // storing the characters name by creating an empty array
+    const characterNames = [];
+    characters.forEach((characterUrl) => {
+      request(characterUrl, (error, response, body) => {
+        if (!error) {
+          const charName = JSON.parse(body).name;
+          // character name
+          characterNames.push(charName);
+        }
+        // Incrementing the processed chars
+        charactersProcessed++;
+        // Checking the processed chars
+        if (charactersProcessed === characters.length) {
+          // when all the chars have been processed, log the char
+          characterNames.forEach((actor) => {
+            console.log(actor);
+          });
+        }
+      });
+    });
   } else {
-	  console.log(error);
+    console.log(error);
   }
 });
